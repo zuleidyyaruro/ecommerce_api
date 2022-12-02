@@ -23,11 +23,12 @@ const ProductInCart = db.define("product_in_cart", {
             allowNull: false,
         },
         price: {
-            type: DataTypes.FLOAT,
+            type: DataTypes.INTEGER,
+            allowNull: false,
         },
         status: {
-            type: DataTypes.STRING,
-            defaultValue: "pending", // pending or complete
+            type: DataTypes.ENUM("complete", "incomplete"),
+            defaultValue: "incomplete",
         },
     },
     {

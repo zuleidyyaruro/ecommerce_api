@@ -24,10 +24,11 @@ const ProductInOrder = db.define("product_in_order", {
         },
         price: {
             type: DataTypes.INTEGER,
+            allowNull: false
         },
         status: {
-            type: DataTypes.STRING,
-            defaultValue: "pending", // pending or complete
+            type: DataTypes.ENUM("complete", "incomplete"),
+            defaultValue: "incomplete",
         },
     },
     {
